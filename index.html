@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>canvas demo</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div class="container">
+      <div class="tools">
+        <div class="tool-btn-wrap">
+          <button id="draw-rect" class="btn btn-active">绘制矩形</button>
+        </div>
+        <div class="tool-btn-wrap">
+          <button id="draw-shape" class="btn">绘制多边形</button>
+        </div>
+        <div class="tool-btn-wrap">
+          <button id="select" class="btn">选择</button>
+        </div>
+        <div class="tool-btn-wrap">
+          <button id="copy" class="btn">复制</button>
+        </div>
+        <!-- <div class="tool-btn-wrap">
+          <button id="eraser">橡皮擦</button>
+        </div> -->
+        <div class="tool-btn-wrap">
+          <button id="undo" class="btn">撤销</button>
+        </div>
+        <div class="tool-btn-wrap">
+          <button id="cleanup" class="btn">清空</button>
+        </div>
+      </div>
+      <div class="right-wrap">
+        <div class="top">
+          <div class="top-btn-wrap">
+            <button id="delte-btn" class="btn">删除</button>
+          </div>
+          <div class="top-btn-wrap">
+            <button id="cancel-btn" class="btn">取消</button>
+          </div>
+          <div class="top-btn-wrap">
+            <button id="confirm-btn" class="btn">确定</button>
+          </div>
+        </div>
+        <div class="draw-area">
+          <div class="back-img"><img src="http://wetwet.cc/db/img/a.1e269410.jpg" /></div> 
+          <canvas class="canvas" id="main-canvas"></canvas>
+          <canvas class="canvas" id="hint-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+    <!-- built files will be auto injected -->
+    <script src="./lib/bundle.iife.js"></script>
+  </body>
+</html>

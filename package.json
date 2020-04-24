@@ -1,0 +1,24 @@
+{
+  "name": "learn-canvas",
+  "version": "1.0.0",
+  "description": "learn-canvas demo",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wangzhipeng@wxchina.com",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup-plugin-sourcemaps": "^0.5.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "rollup-plugin-livereload": "^1.2.0",
+    "rollup-plugin-serve": "^1.0.1",
+    "ts-serializer": "^2.2.5"
+  }
+}

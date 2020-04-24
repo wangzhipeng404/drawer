@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  padding: 4px 12px;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #8c8c8c;
+  border-radius: 3px;
+  color: #434343;
+}
+
+.btn-active {
+  background-color: #1890ff;
+  border-color: #1890ff;
+  color: #fff;
+}
+
+.container {
+  font-size: 16px;
+  display: flex;
+  border: 1px solid #000;
+  width: 704px;
+  height: 850px;
+}
+.container .tools {
+  width: 160px;
+  height: 100%;
+  padding: 50px 0;
+  border-right: 1px solid #000;
+}
+.container .tools .tool-btn-wrap {
+  padding: 5px;
+  text-align: center;
+}
+
+.container .right-wrap {
+  width: 100%;
+  height: 50px;
+}
+.container .right-wrap .top {
+  padding: 10px 15px;
+  display: flex
+}
+.container .right-wrap .top .top-btn-wrap {
+  margin-left: 15px;
+}
+.container .draw-area {
+  flex: 1;
+  position: relative;
+  border-top: 1px solid #000;
+}
+.container .back-img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 572px;
+}
+
+.container .back-img img {
+  width: 100%;
+}
+
+.container .draw-area .canvas {
+  width: 572px;
+  height: 800px;
+}
+.container .draw-area #main-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+.container .draw-area #hint-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 572px;
+  height: 800px;
+  z-index: 9;
+}
