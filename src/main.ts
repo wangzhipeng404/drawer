@@ -180,6 +180,12 @@ hintCanvas.addEventListener('mousedown', function (e) {
       const colorKey = getUniqueColorKey(hashTable)
       currentPenline = new PenShape(colorKey)
     }
+    if (drawMode === 'rect') {
+      currentPenline.points.add(point)
+      currentPenline.points.add(point)
+      currentPenline.points.add(point)
+      currentPenline.points.add(point)
+    }
     if (drawMode === 'shape') {
       const len = currentPenline.points.length()
       if (len === 0) {
@@ -188,20 +194,16 @@ hintCanvas.addEventListener('mousedown', function (e) {
         const p0 = currentPenline.points.get(0)
         if (Math.abs(p0.x - point.x) < 3 && Math.abs(p0.y - point.y) < 3) {
           currentPenline.points.remove(len - 1)
-          shapeState = 'disable'
-          editMode = 'edit'
-          removeBtnActive()
+          // shapeState = 'disable'
+          hashTable.set(currentPenline.colorKey, currentPenline)
+          currentPenline = null
+          hintClear()
+          mainDraw()
         }
       }
-      if (shapeState === 'enable') {
+      if (currentPenline && shapeState === 'enable') {
         currentPenline.points.add(point)
       }
-    }
-    if (drawMode === 'rect') {
-      currentPenline.points.add(point)
-      currentPenline.points.add(point)
-      currentPenline.points.add(point)
-      currentPenline.points.add(point)
     }
   }
   if (editMode === 'select' || editMode === 'copy') {
@@ -267,9 +269,17 @@ hintCanvas.addEventListener('mouseup', function (e) {
   if (keepPointIndex !== null) {
     keepPointIndex = null
   }
-  if (drawMode !== 'shape' || editMode === 'select' || editMode === 'copy') {
+  if (editMode === 'select') {
     editMode = 'edit'
     removeBtnActive()
+  }
+  console.log(editMode, drawMode)
+  if ((editMode === 'draw' && drawMode === 'rect') || editMode === 'copy') {
+    console.log('up')
+    hashTable.set(currentPenline.colorKey, currentPenline)
+    currentPenline = null
+    hintClear()
+    mainDraw()
   }
 });
 
