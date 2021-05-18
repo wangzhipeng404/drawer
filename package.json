@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "rollup-plugin-livereload": "^1.2.0",
-    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-serve": "^1.0.2",
     "ts-serializer": "^2.2.5"
   }
 }
